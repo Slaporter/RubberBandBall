@@ -58,7 +58,7 @@ layout = dict(
 )
 
 fig = dict(data=flight_paths, layout=layout)
-plotly.offline.plot(fig, validate=False, filename='d3-globe.html')
+plotly.offline.plot(fig, validate=False, filename='RubberBandBall.html')
 
 """Reference:
 https://plot.ly/python/lines-on-maps/
