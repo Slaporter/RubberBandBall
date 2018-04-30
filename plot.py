@@ -1,7 +1,7 @@
 import plotly
 import plotly.plotly as py
 import pandas as pd
-izip = zip
+
 
 df = pd.read_csv('latLng.csv')
 

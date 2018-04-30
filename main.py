@@ -1,6 +1,6 @@
 from math import pi, sin, cos, acos
 import csv
-from Term_Project.classes import airport, airportAtlas, aircraft, countryCurrency, currencyRate
+from classes import airport, airportAtlas, aircraft, countryCurrency, currencyRate
 import math
 from itertools import permutations
 

@@ -1,5 +1,5 @@
 import csv
-from Term_Project.classes import airportAtlas
+from classes import airportAtlas
 
 #loading in data for all airports, please see classes for airport atlas class
 t=airportAtlas()
