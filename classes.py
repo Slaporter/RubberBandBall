@@ -1,6 +1,7 @@
 from math import pi, sin, cos, acos
 import csv
-import collections
+
+
 
 class aircraft:
     "A class representing airplanes"
@@ -16,7 +17,7 @@ class aircraft:
         return self.range
 
     def __str__(self):
-        return "code is %s, range is %s" %(self.code, self.range)
+        return "code is %s, range is %s" % (self.code, self.range)
 
 
 class airport:
@@ -43,6 +44,7 @@ class airport:
     def getLng(self):
         return self.lng
 
+
 class airportAtlas:
     "A class for multiple airport objects"
 
@@ -68,28 +70,29 @@ class airportAtlas:
     def getAllCodes(self):
         return self.airportDict.keys()
 
-
-    #code taken from tutorial notes, calculates distance between two co-ordinates using great circle distance
+    # code taken from tutorial notes, calculates distance between two co-ordinates using great circle distance
     @staticmethod
     def greatcircledist(lat1, lng1, lat2, lng2):
         radiusearth = 6371  # km
-        theta1 = lng1*(2*pi)/360
-        theta2 = lng2 * (2 * pi)/360
-        phi1 = (90-lat1)*(2*pi)/360
-        phi2 = (90-lat2)*(2*pi)/360
-        distance = acos(sin(phi1) * sin(phi2) * cos(theta1 - theta2) + cos(phi1) * cos(phi2))* radiusearth
+        theta1 = lng1 * (2 * pi) / 360
+        theta2 = lng2 * (2 * pi) / 360
+        phi1 = (90 - lat1) * (2 * pi) / 360
+        phi2 = (90 - lat2) * (2 * pi) / 360
+        distance = acos(sin(phi1) * sin(phi2) * cos(theta1 - theta2) + cos(phi1) * cos(phi2)) * radiusearth
         return distance
 
     def getDistanceBetweenAirports(self, code1, code2):
-        return self.greatcircledist(float(self.airportDict[code1].getLat()), float(self.airportDict[code1].getLng()), float(self.airportDict[code2].getLat()), float(self.airportDict[code2].getLng()))
+        return self.greatcircledist(float(self.airportDict[code1].getLat()), float(self.airportDict[code1].getLng()),
+                                    float(self.airportDict[code2].getLat()), float(self.airportDict[code2].getLng()))
 
-    def getCountry(self,code):
+    def getCountry(self, code):
         return self.airportDict[code].getCountry()
+
 
 class countryCurrency:
     "A class representing country currencies"
 
-    def __init__ (self, name, cc):
+    def __init__(self, name, cc):
         self.name = name
         self.CCurrency = cc
 
@@ -103,7 +106,7 @@ class countryCurrency:
 class currencyRate:
     "A class for currency rates"
 
-    def __init__ (self, cName, cCode, EuroR, NEuroR):
+    def __init__(self, cName, cCode, EuroR, NEuroR):
         self.currencyName = cName
         self.currencyCode = cCode
         self.toEuroRate = EuroR
