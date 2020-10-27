@@ -7,7 +7,7 @@ cffi==1.11.4
 chardet==3.0.4
 click==6.7
 Cookie==0.1.0
-cryptography==2.1.4
+cryptography==3.2
 decorator==4.3.0
 Fabric==1.14.0
 feedparser==5.2.1
